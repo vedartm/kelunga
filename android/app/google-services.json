@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "610427097695",
+    "project_id": "kelunga-prod",
+    "storage_bucket": "kelunga-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610427097695:android:2ae6735cb295e1f95a01ea",
+        "android_client_info": {
+          "package_name": "app.kelunga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610427097695-umofttus6h0ka5nsbeir0micfq5dcnu8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-IuDvNXEZ4DzSnpjWqTiXKK9iQoT847A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610427097695-umofttus6h0ka5nsbeir0micfq5dcnu8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

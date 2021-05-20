@@ -1,0 +1,20 @@
+include: package:effective_dart/analysis_options.yaml
+
+analyzer:
+  enable-experiment:
+    - extension-methods
+
+  exclude:
+    - lib/**/*.gr.dart
+    - lib/**/*.config.dart
+    - lib/**/*.g.dart
+    - lib/**/*.freezed.dart
+
+  errors:
+    missing_return: error
+    prefer_const_constructors: warning
+    public_member_api_docs: ignore
+    lines_longer_than_80_chars: ignore
+    todo: ignore
+    one_member_abstracts: ignore
+    avoid_catches_without_on_clauses: ignore
