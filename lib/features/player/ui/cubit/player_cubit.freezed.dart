@@ -17,15 +17,17 @@ class _$PlayerStateTearOff {
   const _$PlayerStateTearOff();
 
   _PlayerState call(
-      {required Option<Story> currentAudio,
+      {required Option<Single> currentAudio,
       required bool isPlaying,
       required bool isLoading,
+      required bool isBuffering,
       required Option<Duration> position,
       required Option<Duration> bufferedPosition}) {
     return _PlayerState(
       currentAudio: currentAudio,
       isPlaying: isPlaying,
       isLoading: isLoading,
+      isBuffering: isBuffering,
       position: position,
       bufferedPosition: bufferedPosition,
     );
@@ -37,9 +39,10 @@ const $PlayerState = _$PlayerStateTearOff();
 
 /// @nodoc
 mixin _$PlayerState {
-  Option<Story> get currentAudio => throw _privateConstructorUsedError;
+  Option<Single> get currentAudio => throw _privateConstructorUsedError;
   bool get isPlaying => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  bool get isBuffering => throw _privateConstructorUsedError;
   Option<Duration> get position => throw _privateConstructorUsedError;
   Option<Duration> get bufferedPosition => throw _privateConstructorUsedError;
 
@@ -54,9 +57,10 @@ abstract class $PlayerStateCopyWith<$Res> {
           PlayerState value, $Res Function(PlayerState) then) =
       _$PlayerStateCopyWithImpl<$Res>;
   $Res call(
-      {Option<Story> currentAudio,
+      {Option<Single> currentAudio,
       bool isPlaying,
       bool isLoading,
+      bool isBuffering,
       Option<Duration> position,
       Option<Duration> bufferedPosition});
 }
@@ -74,6 +78,7 @@ class _$PlayerStateCopyWithImpl<$Res> implements $PlayerStateCopyWith<$Res> {
     Object? currentAudio = freezed,
     Object? isPlaying = freezed,
     Object? isLoading = freezed,
+    Object? isBuffering = freezed,
     Object? position = freezed,
     Object? bufferedPosition = freezed,
   }) {
@@ -81,7 +86,7 @@ class _$PlayerStateCopyWithImpl<$Res> implements $PlayerStateCopyWith<$Res> {
       currentAudio: currentAudio == freezed
           ? _value.currentAudio
           : currentAudio // ignore: cast_nullable_to_non_nullable
-              as Option<Story>,
+              as Option<Single>,
       isPlaying: isPlaying == freezed
           ? _value.isPlaying
           : isPlaying // ignore: cast_nullable_to_non_nullable
@@ -89,6 +94,10 @@ class _$PlayerStateCopyWithImpl<$Res> implements $PlayerStateCopyWith<$Res> {
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isBuffering: isBuffering == freezed
+          ? _value.isBuffering
+          : isBuffering // ignore: cast_nullable_to_non_nullable
               as bool,
       position: position == freezed
           ? _value.position
@@ -110,9 +119,10 @@ abstract class _$PlayerStateCopyWith<$Res>
       __$PlayerStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Option<Story> currentAudio,
+      {Option<Single> currentAudio,
       bool isPlaying,
       bool isLoading,
+      bool isBuffering,
       Option<Duration> position,
       Option<Duration> bufferedPosition});
 }
@@ -132,6 +142,7 @@ class __$PlayerStateCopyWithImpl<$Res> extends _$PlayerStateCopyWithImpl<$Res>
     Object? currentAudio = freezed,
     Object? isPlaying = freezed,
     Object? isLoading = freezed,
+    Object? isBuffering = freezed,
     Object? position = freezed,
     Object? bufferedPosition = freezed,
   }) {
@@ -139,7 +150,7 @@ class __$PlayerStateCopyWithImpl<$Res> extends _$PlayerStateCopyWithImpl<$Res>
       currentAudio: currentAudio == freezed
           ? _value.currentAudio
           : currentAudio // ignore: cast_nullable_to_non_nullable
-              as Option<Story>,
+              as Option<Single>,
       isPlaying: isPlaying == freezed
           ? _value.isPlaying
           : isPlaying // ignore: cast_nullable_to_non_nullable
@@ -147,6 +158,10 @@ class __$PlayerStateCopyWithImpl<$Res> extends _$PlayerStateCopyWithImpl<$Res>
       isLoading: isLoading == freezed
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isBuffering: isBuffering == freezed
+          ? _value.isBuffering
+          : isBuffering // ignore: cast_nullable_to_non_nullable
               as bool,
       position: position == freezed
           ? _value.position
@@ -167,15 +182,18 @@ class _$_PlayerState implements _PlayerState {
       {required this.currentAudio,
       required this.isPlaying,
       required this.isLoading,
+      required this.isBuffering,
       required this.position,
       required this.bufferedPosition});
 
   @override
-  final Option<Story> currentAudio;
+  final Option<Single> currentAudio;
   @override
   final bool isPlaying;
   @override
   final bool isLoading;
+  @override
+  final bool isBuffering;
   @override
   final Option<Duration> position;
   @override
@@ -183,7 +201,7 @@ class _$_PlayerState implements _PlayerState {
 
   @override
   String toString() {
-    return 'PlayerState(currentAudio: $currentAudio, isPlaying: $isPlaying, isLoading: $isLoading, position: $position, bufferedPosition: $bufferedPosition)';
+    return 'PlayerState(currentAudio: $currentAudio, isPlaying: $isPlaying, isLoading: $isLoading, isBuffering: $isBuffering, position: $position, bufferedPosition: $bufferedPosition)';
   }
 
   @override
@@ -199,6 +217,9 @@ class _$_PlayerState implements _PlayerState {
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
+            (identical(other.isBuffering, isBuffering) ||
+                const DeepCollectionEquality()
+                    .equals(other.isBuffering, isBuffering)) &&
             (identical(other.position, position) ||
                 const DeepCollectionEquality()
                     .equals(other.position, position)) &&
@@ -213,6 +234,7 @@ class _$_PlayerState implements _PlayerState {
       const DeepCollectionEquality().hash(currentAudio) ^
       const DeepCollectionEquality().hash(isPlaying) ^
       const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(isBuffering) ^
       const DeepCollectionEquality().hash(position) ^
       const DeepCollectionEquality().hash(bufferedPosition);
 
@@ -224,18 +246,21 @@ class _$_PlayerState implements _PlayerState {
 
 abstract class _PlayerState implements PlayerState {
   const factory _PlayerState(
-      {required Option<Story> currentAudio,
+      {required Option<Single> currentAudio,
       required bool isPlaying,
       required bool isLoading,
+      required bool isBuffering,
       required Option<Duration> position,
       required Option<Duration> bufferedPosition}) = _$_PlayerState;
 
   @override
-  Option<Story> get currentAudio => throw _privateConstructorUsedError;
+  Option<Single> get currentAudio => throw _privateConstructorUsedError;
   @override
   bool get isPlaying => throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  bool get isBuffering => throw _privateConstructorUsedError;
   @override
   Option<Duration> get position => throw _privateConstructorUsedError;
   @override

@@ -6,5 +6,5 @@ class HomeState with _$HomeState {
 
   const factory HomeState.loading() = _Loading;
 
-  const factory HomeState.success(List<Story> audios) = _Success;
+  const factory HomeState.success(List<Audio> audios) = _Success;
 }

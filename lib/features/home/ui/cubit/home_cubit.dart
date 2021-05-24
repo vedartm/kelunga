@@ -3,7 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../core/error/failures.dart';
-import '../../models/story.dart';
+import '../../models/audio.dart';
 import '../../repo/home_repo.dart';
 
 part 'home_cubit.freezed.dart';
@@ -16,7 +16,7 @@ class HomeCubit extends Cubit<HomeState> {
   final IHomeRepo _repo;
 
   void fetchStories() async {
-    final result = await _repo.getStories();
+    final result = await _repo.getAudios();
     emit(result.fold(
       (l) => HomeState.failed(l),
       (r) => HomeState.success(r),

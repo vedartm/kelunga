@@ -45,4 +45,6 @@ extension DurationX on Duration {
     final twoDigitSeconds = twoDigits(inSeconds.remainder(60));
     return "${twoDigits(inHours)}:$twoDigitMinutes:$twoDigitSeconds";
   }
+
+  String formatInMinutes() => '$inMinutes min';
 }
