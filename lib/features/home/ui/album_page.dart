@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/injection/injection.dart';
-import '../../../core/ui/colors.dart';
 import '../../../core/ui/dimens.dart';
 import '../../../core/ui/spacers.dart';
 import '../../../core/ui/widgets.dart';
@@ -43,10 +42,7 @@ class AlbumPage extends StatelessWidget {
                 child: Row(
                   children: [
                     KIconButton(
-                      icon: const Icon(
-                        Icons.arrow_back,
-                        color: KColors.textPrimary,
-                      ),
+                      icon: const Icon(Icons.arrow_back),
                       onPressed: () => AutoRouter.of(context).pop(),
                     ),
                     KSpacers.width20,
