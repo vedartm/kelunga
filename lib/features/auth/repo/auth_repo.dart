@@ -50,6 +50,8 @@ class AuthRepo implements IAuthRepo {
     try {
       final googleUser = await _googleSignIn.signIn();
 
+      _logger.d(googleUser?.email);
+
       if (googleUser == null) {
         return Left(Failure.cancelledByUser());
       }

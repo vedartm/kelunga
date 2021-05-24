@@ -26,6 +26,7 @@ class HomeHeader extends StatelessWidget {
         KSpacers.height40,
         BlocBuilder<AuthCubit, AuthState>(
           builder: (context, state) => Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               KSpacers.width20,
               Expanded(
