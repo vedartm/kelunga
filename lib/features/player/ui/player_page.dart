@@ -48,10 +48,7 @@ class _PlayerPageState extends State<PlayerPage>
             Row(
               children: [
                 KIconButton(
-                  icon: const Icon(
-                    Icons.close,
-                    color: KColors.textPrimary,
-                  ),
+                  icon: const Icon(Icons.close),
                   onPressed: () {
                     print('Closing');
                     widget.controller.close();

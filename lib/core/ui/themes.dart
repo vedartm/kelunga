@@ -14,7 +14,7 @@ class KThemes {
     primaryColor: Colors.white,
     accentColor: KColors.primary,
     iconTheme: IconThemeData(
-      color: KColors.textSecondary,
+      color: KColors.textPrimary,
     ),
     // scaffoldBackgroundColor: KColors.scaffoldBackground,
     scaffoldBackgroundColor: Colors.white,
