@@ -48,9 +48,9 @@ class _PlayerPageState extends State<PlayerPage>
                   onPressed: () => null,
                   elevation: 0,
                   fillColor: Colors.white,
-                  child: Icon(Icons.close, size: 24),
-                  padding: EdgeInsets.all(16.0),
-                  shape: CircleBorder(
+                  child: const Icon(Icons.close, size: 24),
+                  padding: const EdgeInsets.all(16.0),
+                  shape: const CircleBorder(
                     side: BorderSide(
                       color: Color(0x44BABCC6),
                       width: 2,

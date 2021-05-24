@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/router/router.gr.dart';
+import '../../../core/ui/dimens.dart';
 import '../../../core/ui/spacers.dart';
+import '../../../core/ui/widgets.dart';
 import 'cubit/auth_cubit.dart';
 
 class LoginPage extends StatelessWidget {
@@ -22,7 +24,7 @@ class LoginPage extends StatelessWidget {
           ),
           const Spacer(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: KDimens.padding),
             child: Text(
               'We are what we do',
               textAlign: TextAlign.center,
@@ -31,7 +33,7 @@ class LoginPage extends StatelessWidget {
           ),
           KSpacers.height16,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: KDimens.padding),
             child: Text(
               'Thousands of people use kelunga and enjoy meditating',
               textAlign: TextAlign.center,
@@ -41,11 +43,18 @@ class LoginPage extends StatelessWidget {
           KSpacers.height32,
           KSpacers.height32,
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: KDimens.padding),
             child: ElevatedButton(
               onPressed: () async {
+                showDialog(
+                  context: context,
+                  builder: (context) => const LoadingDialog(
+                    message: 'Signing in with Google...',
+                  ),
+                );
                 final result =
                     await context.read<AuthCubit>().signInWithGoogle();
+                Navigator.of(context).pop();
                 if (result) {
                   AutoRouter.of(context).replace(HomeRoute());
                 }
