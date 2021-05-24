@@ -13,12 +13,13 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'package:logger/logger.dart' as _i7;
 
 import '../../features/auth/repo/auth_repo.dart' as _i10;
-import '../../features/auth/ui/cubit/auth_cubit.dart' as _i12;
+import '../../features/auth/ui/cubit/auth_cubit.dart' as _i13;
 import '../../features/home/repo/home_repo.dart' as _i11;
-import '../../features/home/ui/cubit/home_cubit.dart' as _i13;
+import '../../features/home/ui/cubit/album/album_cubit.dart' as _i12;
+import '../../features/home/ui/cubit/home_cubit.dart' as _i14;
 import '../../features/player/ui/cubit/player_cubit.dart' as _i9;
 import '../util/bloc_observer.dart' as _i8;
-import 'module.dart' as _i14;
+import 'module.dart' as _i15;
 
 const String _dev = 'dev';
 const String _prod = 'prod';
@@ -45,9 +46,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       get<_i5.FirebaseFirestore>()));
   gh.lazySingleton<_i11.IHomeRepo>(
       () => _i11.HomeRepo(get<_i5.FirebaseFirestore>(), get<_i7.Logger>()));
-  gh.factory<_i12.AuthCubit>(() => _i12.AuthCubit(get<_i10.IAuthRepo>()));
-  gh.factory<_i13.HomeCubit>(() => _i13.HomeCubit(get<_i11.IHomeRepo>()));
+  gh.factory<_i12.AlbumCubit>(() => _i12.AlbumCubit(get<_i11.IHomeRepo>()));
+  gh.factory<_i13.AuthCubit>(() => _i13.AuthCubit(get<_i10.IAuthRepo>()));
+  gh.factory<_i14.HomeCubit>(() => _i14.HomeCubit(get<_i11.IHomeRepo>()));
   return get;
 }
 
-class _$MyModule extends _i14.MyModule {}
+class _$MyModule extends _i15.MyModule {}

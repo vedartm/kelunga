@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../../../core/ui/colors.dart';
 import '../../../core/ui/dimens.dart';
 import '../../../core/ui/progress_bar.dart';
 import '../../../core/ui/spacers.dart';
+import '../../../core/ui/widgets.dart';
 import 'cubit/player_cubit.dart';
 
 class PlayerPage extends StatefulWidget {
-  const PlayerPage({Key? key}) : super(key: key);
+  const PlayerPage({Key? key, required this.controller}) : super(key: key);
+  final PanelController controller;
 
   @override
   _PlayerPageState createState() => _PlayerPageState();
@@ -44,18 +47,15 @@ class _PlayerPageState extends State<PlayerPage>
             KSpacers.height20,
             Row(
               children: [
-                RawMaterialButton(
-                  onPressed: () => null,
-                  elevation: 0,
-                  fillColor: Colors.white,
-                  child: const Icon(Icons.close, size: 24),
-                  padding: const EdgeInsets.all(16.0),
-                  shape: const CircleBorder(
-                    side: BorderSide(
-                      color: Color(0x44BABCC6),
-                      width: 2,
-                    ),
+                KIconButton(
+                  icon: const Icon(
+                    Icons.close,
+                    color: KColors.textPrimary,
                   ),
+                  onPressed: () {
+                    print('Closing');
+                    widget.controller.close();
+                  },
                 ),
                 KSpacers.width20,
               ],
@@ -66,16 +66,27 @@ class _PlayerPageState extends State<PlayerPage>
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline5,
             ),
+            if (a.albumName != null) ...[
+              KSpacers.height16,
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: KDimens.padding),
+                child: Text(
+                  a.albumName?.toUpperCase() ?? '',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle2
+                      ?.copyWith(color: KColors.textSecondary),
+                ),
+              ),
+            ],
             KSpacers.height16,
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: KDimens.padding),
               child: Text(
                 a.description,
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .subtitle2
-                    ?.copyWith(color: KColors.textSecondary),
               ),
             ),
             KSpacers.height40,

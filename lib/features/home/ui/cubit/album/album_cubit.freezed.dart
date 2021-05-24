@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'home_cubit.dart';
+part of 'album_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,8 +13,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$HomeStateTearOff {
-  const _$HomeStateTearOff();
+class _$AlbumStateTearOff {
+  const _$AlbumStateTearOff();
 
   _Failed failed(Failure failure) {
     return _Failed(
@@ -26,30 +26,30 @@ class _$HomeStateTearOff {
     return const _Loading();
   }
 
-  _Success success(List<Audio> audios) {
+  _Success success(List<Single> singles) {
     return _Success(
-      audios,
+      singles,
     );
   }
 }
 
 /// @nodoc
-const $HomeState = _$HomeStateTearOff();
+const $AlbumState = _$AlbumStateTearOff();
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$AlbumState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Failure failure) failed,
     required TResult Function() loading,
-    required TResult Function(List<Audio> audios) success,
+    required TResult Function(List<Single> singles) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Failure failure)? failed,
     TResult Function()? loading,
-    TResult Function(List<Audio> audios)? success,
+    TResult Function(List<Single> singles)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,18 +71,19 @@ mixin _$HomeState {
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res>;
+abstract class $AlbumStateCopyWith<$Res> {
+  factory $AlbumStateCopyWith(
+          AlbumState value, $Res Function(AlbumState) then) =
+      _$AlbumStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$AlbumStateCopyWithImpl<$Res> implements $AlbumStateCopyWith<$Res> {
+  _$AlbumStateCopyWithImpl(this._value, this._then);
 
-  final HomeState _value;
+  final AlbumState _value;
   // ignore: unused_field
-  final $Res Function(HomeState) _then;
+  final $Res Function(AlbumState) _then;
 }
 
 /// @nodoc
@@ -95,7 +96,7 @@ abstract class _$FailedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FailedCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+class __$FailedCopyWithImpl<$Res> extends _$AlbumStateCopyWithImpl<$Res>
     implements _$FailedCopyWith<$Res> {
   __$FailedCopyWithImpl(_Failed _value, $Res Function(_Failed) _then)
       : super(_value, (v) => _then(v as _Failed));
@@ -133,7 +134,7 @@ class _$_Failed implements _Failed {
 
   @override
   String toString() {
-    return 'HomeState.failed(failure: $failure)';
+    return 'AlbumState.failed(failure: $failure)';
   }
 
   @override
@@ -158,7 +159,7 @@ class _$_Failed implements _Failed {
   TResult when<TResult extends Object?>({
     required TResult Function(Failure failure) failed,
     required TResult Function() loading,
-    required TResult Function(List<Audio> audios) success,
+    required TResult Function(List<Single> singles) success,
   }) {
     return failed(failure);
   }
@@ -168,7 +169,7 @@ class _$_Failed implements _Failed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Failure failure)? failed,
     TResult Function()? loading,
-    TResult Function(List<Audio> audios)? success,
+    TResult Function(List<Single> singles)? success,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -202,7 +203,7 @@ class _$_Failed implements _Failed {
   }
 }
 
-abstract class _Failed implements HomeState {
+abstract class _Failed implements AlbumState {
   const factory _Failed(Failure failure) = _$_Failed;
 
   Failure get failure => throw _privateConstructorUsedError;
@@ -217,7 +218,7 @@ abstract class _$LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+class __$LoadingCopyWithImpl<$Res> extends _$AlbumStateCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
   __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
       : super(_value, (v) => _then(v as _Loading));
@@ -233,7 +234,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'HomeState.loading()';
+    return 'AlbumState.loading()';
   }
 
   @override
@@ -249,7 +250,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function(Failure failure) failed,
     required TResult Function() loading,
-    required TResult Function(List<Audio> audios) success,
+    required TResult Function(List<Single> singles) success,
   }) {
     return loading();
   }
@@ -259,7 +260,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Failure failure)? failed,
     TResult Function()? loading,
-    TResult Function(List<Audio> audios)? success,
+    TResult Function(List<Single> singles)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -293,7 +294,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements HomeState {
+abstract class _Loading implements AlbumState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -301,11 +302,11 @@ abstract class _Loading implements HomeState {
 abstract class _$SuccessCopyWith<$Res> {
   factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
       __$SuccessCopyWithImpl<$Res>;
-  $Res call({List<Audio> audios});
+  $Res call({List<Single> singles});
 }
 
 /// @nodoc
-class __$SuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
+class __$SuccessCopyWithImpl<$Res> extends _$AlbumStateCopyWithImpl<$Res>
     implements _$SuccessCopyWith<$Res> {
   __$SuccessCopyWithImpl(_Success _value, $Res Function(_Success) _then)
       : super(_value, (v) => _then(v as _Success));
@@ -315,13 +316,13 @@ class __$SuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? audios = freezed,
+    Object? singles = freezed,
   }) {
     return _then(_Success(
-      audios == freezed
-          ? _value.audios
-          : audios // ignore: cast_nullable_to_non_nullable
-              as List<Audio>,
+      singles == freezed
+          ? _value.singles
+          : singles // ignore: cast_nullable_to_non_nullable
+              as List<Single>,
     ));
   }
 }
@@ -329,27 +330,27 @@ class __$SuccessCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Success implements _Success {
-  const _$_Success(this.audios);
+  const _$_Success(this.singles);
 
   @override
-  final List<Audio> audios;
+  final List<Single> singles;
 
   @override
   String toString() {
-    return 'HomeState.success(audios: $audios)';
+    return 'AlbumState.success(singles: $singles)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Success &&
-            (identical(other.audios, audios) ||
-                const DeepCollectionEquality().equals(other.audios, audios)));
+            (identical(other.singles, singles) ||
+                const DeepCollectionEquality().equals(other.singles, singles)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(audios);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(singles);
 
   @JsonKey(ignore: true)
   @override
@@ -361,9 +362,9 @@ class _$_Success implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function(Failure failure) failed,
     required TResult Function() loading,
-    required TResult Function(List<Audio> audios) success,
+    required TResult Function(List<Single> singles) success,
   }) {
-    return success(audios);
+    return success(singles);
   }
 
   @override
@@ -371,11 +372,11 @@ class _$_Success implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Failure failure)? failed,
     TResult Function()? loading,
-    TResult Function(List<Audio> audios)? success,
+    TResult Function(List<Single> singles)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(audios);
+      return success(singles);
     }
     return orElse();
   }
@@ -405,10 +406,10 @@ class _$_Success implements _Success {
   }
 }
 
-abstract class _Success implements HomeState {
-  const factory _Success(List<Audio> audios) = _$_Success;
+abstract class _Success implements AlbumState {
+  const factory _Success(List<Single> singles) = _$_Success;
 
-  List<Audio> get audios => throw _privateConstructorUsedError;
+  List<Single> get singles => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$SuccessCopyWith<_Success> get copyWith =>
       throw _privateConstructorUsedError;

@@ -51,7 +51,7 @@ class _PlayerWidgetState extends State<PlayerWidget>
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(KDimens.borderRadius),
                   child: CachedNetworkImage(
-                    imageUrl: a.imageUrl,
+                    imageUrl: a.artUrl,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -70,7 +70,7 @@ class _PlayerWidgetState extends State<PlayerWidget>
                     ),
                     KSpacers.height4,
                     Text(
-                      a.authorName,
+                      a.albumName ?? a.authorName,
                       maxLines: 1,
                       style: Theme.of(context).textTheme.bodyText2,
                       overflow: TextOverflow.ellipsis,

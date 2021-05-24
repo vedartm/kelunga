@@ -13,13 +13,17 @@ class KThemes {
     brightness: Brightness.light,
     primaryColor: Colors.white,
     accentColor: KColors.primary,
+    iconTheme: IconThemeData(
+      color: KColors.textSecondary,
+    ),
     // scaffoldBackgroundColor: KColors.scaffoldBackground,
     scaffoldBackgroundColor: Colors.white,
     textTheme: TextTheme(
       caption: const TextStyle(
         fontSize: 12,
+        fontWeight: FontWeight.w500,
         letterSpacing: 0.4,
-        color: KColors.textSecondary,
+        color: Colors.white,
       ),
       subtitle2: const TextStyle(
         fontWeight: FontWeight.w500,
@@ -36,7 +40,7 @@ class KThemes {
         fontSize: 28,
       ),
       headline6: const TextStyle(
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w500,
         fontSize: 24,
         letterSpacing: 0.15,
       ),
@@ -61,6 +65,10 @@ class KThemes {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(KDimens.borderRadius),
       ),
+    ),
+    dividerTheme: DividerThemeData(
+      space: 0,
+      color: Color(0xFFADB8D9),
     ),
     bottomSheetTheme: BottomSheetThemeData(
       shape: RoundedRectangleBorder(
