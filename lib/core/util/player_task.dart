@@ -24,7 +24,6 @@ class AudioPlayerTask extends BackgroundAudioTask {
     // _eventSubscription = _player.playbackEventStream.listen((event) {
     // });
     _eventSubscription = _player.positionStream.listen((event) {
-      print('Update Position: $event');
       _broadcastState();
     });
     // Special processing for state transitions.

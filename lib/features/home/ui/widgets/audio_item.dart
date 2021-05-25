@@ -53,7 +53,7 @@ class AudioItem extends StatelessWidget {
               ),
               const Spacer(),
               Text(
-                '${audio.name} is awesome',
+                audio.name,
                 style: Theme.of(context)
                     .textTheme
                     .subtitle1

@@ -50,7 +50,6 @@ class _PlayerPageState extends State<PlayerPage>
                 KIconButton(
                   icon: const Icon(Icons.close),
                   onPressed: () {
-                    print('Closing');
                     widget.controller.close();
                   },
                 ),

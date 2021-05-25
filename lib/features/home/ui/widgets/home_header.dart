@@ -14,6 +14,8 @@ import '../../../../core/ui/widgets.dart';
 import '../../../auth/ui/cubit/auth_cubit.dart';
 import '../../models/banner.dart' as m;
 import '../../repo/home_repo.dart';
+import 'banner_item.dart';
+import 'profile_sheet.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -35,11 +37,11 @@ class HomeHeader extends StatelessWidget {
                   children: [
                     state.maybeMap(
                       orElse: () => Text(
-                        'Good ${greeting()}, Guest',
+                        'Good ${greeting()}, \nGuest',
                         style: Theme.of(context).textTheme.headline5,
                       ),
                       authenticated: (s) => Text(
-                        'Good ${greeting()}, ${s.user.name.split(' ')[0]}',
+                        'Good ${greeting()}, \n${s.user.name.split(' ')[0]}',
                         style: Theme.of(context).textTheme.headline5,
                       ),
                     ),
@@ -58,7 +60,10 @@ class HomeHeader extends StatelessWidget {
                   child: CircleAvatar(radius: 22),
                 ),
                 authenticated: (s) => InkWell(
-                  onTap: () => AutoRouter.of(context).push(ProfileRoute()),
+                  onTap: () => showModalBottomSheet(
+                    context: context,
+                    builder: (context) => const ProfileSheet(),
+                  ),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage:
@@ -87,23 +92,7 @@ class HomeHeader extends StatelessWidget {
                   (l) => const SizedBox(),
                   (r) => CarouselSlider(
                     options: carouselOptions,
-                    items: r
-                        .map(
-                          (i) => Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: KDimens.padding),
-                            child: ClipRRect(
-                              borderRadius:
-                                  BorderRadius.circular(KDimens.borderRadius),
-                              child: CachedNetworkImage(
-                                width: double.infinity,
-                                imageUrl: i.imageUrl,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        )
-                        .toList(),
+                    items: r.map((i) => BannerItem(banner: i)).toList(),
                   ),
                 ) ??
                 const SizedBox();

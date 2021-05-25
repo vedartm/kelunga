@@ -26,8 +26,10 @@ class HomeRepo implements IHomeRepo {
   Future<Either<Failure, List<Audio>>> getAudios() async {
     try {
       final querySnapshot = await _firestore.collection('audios').get();
+
       final models =
           querySnapshot.docs.map((e) => Audio.fromAudiosCollection(e)).toList();
+
       return Right(models);
     } catch (e) {
       _logger.e(e);
@@ -62,8 +64,6 @@ class HomeRepo implements IHomeRepo {
       final models = querySnapshot.docs
           .map((e) => Audio.fromSinglesCollection(album, e) as Single)
           .toList();
-
-      _logger.d(models.length);
 
       return Right(models);
     } catch (e) {

@@ -25,7 +25,6 @@ class PlayerCubit extends Cubit<PlayerState> {
     });
 
     AudioService.playbackStateStream.listen((pState) {
-      // print('AudioService: ${AudioService.playbackState}');
       emit(state.copyWith(
         isPlaying: pState.playing,
         position: optionOf(pState.position),
@@ -99,7 +98,6 @@ class PlayerCubit extends Cubit<PlayerState> {
 
   @override
   Future<void> close() async {
-    print('Stop service');
     await AudioService.stop();
     return super.close();
   }

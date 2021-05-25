@@ -67,7 +67,7 @@ class AlbumPage extends StatelessWidget {
                     album.description,
                     style: Theme.of(context).textTheme.bodyText2,
                   ),
-                  KSpacers.height20,
+                  KSpacers.height32,
                 ],
               ),
             ),
