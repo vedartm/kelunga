@@ -15,7 +15,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   final IHomeRepo _repo;
 
-  void fetchStories() async {
+  void fetchAudios() async {
     final result = await _repo.getAudios();
     emit(result.fold(
       (l) => HomeState.failed(l),

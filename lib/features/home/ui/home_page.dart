@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(KDimens.borderRadius),
               body: SafeArea(
                 child: BlocBuilder<HomeCubit, HomeState>(
-                  bloc: getIt()..fetchStories(),
+                  bloc: getIt()..fetchAudios(),
                   builder: (context, state) => state.map(
                     failed: (s) => const KError(),
                     loading: (s) => const KLoader(),
