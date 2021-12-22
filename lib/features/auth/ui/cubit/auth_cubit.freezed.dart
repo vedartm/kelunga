@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_cubit.dart';
 
@@ -44,6 +45,13 @@ mixin _$AuthState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? authenticated,
+    TResult Function()? authenticating,
+    TResult Function()? unauthenticated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(User user)? authenticated,
     TResult Function()? authenticating,
@@ -56,6 +64,13 @@ mixin _$AuthState {
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Authenticating value) authenticating,
     required TResult Function(_Unauthenticated value) unauthenticated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Authenticating value)? authenticating,
+    TResult Function(_Unauthenticated value)? unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -139,14 +154,14 @@ class _$_Authenticated implements _Authenticated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Authenticated &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is _Authenticated &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -161,6 +176,16 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function() unauthenticated,
   }) {
     return authenticated(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? authenticated,
+    TResult Function()? authenticating,
+    TResult Function()? unauthenticated,
+  }) {
+    return authenticated?.call(user);
   }
 
   @override
@@ -189,6 +214,16 @@ class _$_Authenticated implements _Authenticated {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Authenticating value)? authenticating,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+  }) {
+    return authenticated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Authenticated value)? authenticated,
     TResult Function(_Authenticating value)? authenticating,
@@ -205,7 +240,7 @@ class _$_Authenticated implements _Authenticated {
 abstract class _Authenticated implements AuthState {
   const factory _Authenticated(User user) = _$_Authenticated;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   _$AuthenticatedCopyWith<_Authenticated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -241,7 +276,8 @@ class _$_Authenticating implements _Authenticating {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Authenticating);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Authenticating);
   }
 
   @override
@@ -255,6 +291,16 @@ class _$_Authenticating implements _Authenticating {
     required TResult Function() unauthenticated,
   }) {
     return authenticating();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? authenticated,
+    TResult Function()? authenticating,
+    TResult Function()? unauthenticated,
+  }) {
+    return authenticating?.call();
   }
 
   @override
@@ -279,6 +325,16 @@ class _$_Authenticating implements _Authenticating {
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return authenticating(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Authenticating value)? authenticating,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+  }) {
+    return authenticating?.call(this);
   }
 
   @override
@@ -330,7 +386,8 @@ class _$_Unauthenticated implements _Unauthenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Unauthenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Unauthenticated);
   }
 
   @override
@@ -344,6 +401,16 @@ class _$_Unauthenticated implements _Unauthenticated {
     required TResult Function() unauthenticated,
   }) {
     return unauthenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(User user)? authenticated,
+    TResult Function()? authenticating,
+    TResult Function()? unauthenticated,
+  }) {
+    return unauthenticated?.call();
   }
 
   @override
@@ -368,6 +435,16 @@ class _$_Unauthenticated implements _Unauthenticated {
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) {
     return unauthenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Authenticating value)? authenticating,
+    TResult Function(_Unauthenticated value)? unauthenticated,
+  }) {
+    return unauthenticated?.call(this);
   }
 
   @override

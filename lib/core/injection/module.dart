@@ -4,18 +4,22 @@ import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:logger/logger.dart';
 
 @module
 abstract class MyModule {
   @lazySingleton
-  FirebaseAnalytics get analytics => FirebaseAnalytics();
+  FirebaseAnalytics get analytics => FirebaseAnalytics.instance;
 
   @lazySingleton
   FirebaseFirestore get firestore => FirebaseFirestore.instance;
 
   @lazySingleton
   FirebaseAuth get auth => FirebaseAuth.instance;
+
+  @lazySingleton
+  AudioPlayer get player => AudioPlayer();
 
   // @lazySingleton
   // FirebaseMessaging get messaging => FirebaseMessaging.instance;

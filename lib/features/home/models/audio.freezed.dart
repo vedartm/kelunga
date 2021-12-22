@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'audio.dart';
 
@@ -100,6 +101,25 @@ mixin _$Audio {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String name,
+            String description,
+            Duration duration,
+            String mediaUrl,
+            String artUrl,
+            String authorId,
+            String authorName,
+            String authorAvatarUrl,
+            String? albumName)?
+        single,
+    TResult Function(String id, String name, String description, String artUrl,
+            String authorId, String authorName, String authorAvatarUrl)?
+        album,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             String id,
@@ -123,6 +143,12 @@ mixin _$Audio {
   TResult map<TResult extends Object?>({
     required TResult Function(Single value) single,
     required TResult Function(Album value) album,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Single value)? single,
+    TResult Function(Album value)? album,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -331,49 +357,36 @@ class _$Single implements Single {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Single &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.duration, duration) ||
-                const DeepCollectionEquality()
-                    .equals(other.duration, duration)) &&
-            (identical(other.mediaUrl, mediaUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.mediaUrl, mediaUrl)) &&
-            (identical(other.artUrl, artUrl) ||
-                const DeepCollectionEquality().equals(other.artUrl, artUrl)) &&
-            (identical(other.authorId, authorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorId, authorId)) &&
-            (identical(other.authorName, authorName) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorName, authorName)) &&
-            (identical(other.authorAvatarUrl, authorAvatarUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorAvatarUrl, authorAvatarUrl)) &&
-            (identical(other.albumName, albumName) ||
-                const DeepCollectionEquality()
-                    .equals(other.albumName, albumName)));
+        (other.runtimeType == runtimeType &&
+            other is Single &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.duration, duration) &&
+            const DeepCollectionEquality().equals(other.mediaUrl, mediaUrl) &&
+            const DeepCollectionEquality().equals(other.artUrl, artUrl) &&
+            const DeepCollectionEquality().equals(other.authorId, authorId) &&
+            const DeepCollectionEquality()
+                .equals(other.authorName, authorName) &&
+            const DeepCollectionEquality()
+                .equals(other.authorAvatarUrl, authorAvatarUrl) &&
+            const DeepCollectionEquality().equals(other.albumName, albumName));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(duration) ^
-      const DeepCollectionEquality().hash(mediaUrl) ^
-      const DeepCollectionEquality().hash(artUrl) ^
-      const DeepCollectionEquality().hash(authorId) ^
-      const DeepCollectionEquality().hash(authorName) ^
-      const DeepCollectionEquality().hash(authorAvatarUrl) ^
-      const DeepCollectionEquality().hash(albumName);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(duration),
+      const DeepCollectionEquality().hash(mediaUrl),
+      const DeepCollectionEquality().hash(artUrl),
+      const DeepCollectionEquality().hash(authorId),
+      const DeepCollectionEquality().hash(authorName),
+      const DeepCollectionEquality().hash(authorAvatarUrl),
+      const DeepCollectionEquality().hash(albumName));
 
   @JsonKey(ignore: true)
   @override
@@ -407,6 +420,29 @@ class _$Single implements Single {
   }) {
     return single(id, name, description, duration, mediaUrl, artUrl, authorId,
         authorName, authorAvatarUrl, albumName);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String name,
+            String description,
+            Duration duration,
+            String mediaUrl,
+            String artUrl,
+            String authorId,
+            String authorName,
+            String authorAvatarUrl,
+            String? albumName)?
+        single,
+    TResult Function(String id, String name, String description, String artUrl,
+            String authorId, String authorName, String authorAvatarUrl)?
+        album,
+  }) {
+    return single?.call(id, name, description, duration, mediaUrl, artUrl,
+        authorId, authorName, authorAvatarUrl, albumName);
   }
 
   @override
@@ -447,6 +483,15 @@ class _$Single implements Single {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Single value)? single,
+    TResult Function(Album value)? album,
+  }) {
+    return single?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Single value)? single,
     TResult Function(Album value)? album,
@@ -473,22 +518,22 @@ abstract class Single implements Audio {
       String? albumName}) = _$Single;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
-  Duration get duration => throw _privateConstructorUsedError;
-  String get mediaUrl => throw _privateConstructorUsedError;
+  String get description;
+  Duration get duration;
+  String get mediaUrl;
   @override
-  String get artUrl => throw _privateConstructorUsedError;
+  String get artUrl;
   @override
-  String get authorId => throw _privateConstructorUsedError;
+  String get authorId;
   @override
-  String get authorName => throw _privateConstructorUsedError;
+  String get authorName;
   @override
-  String get authorAvatarUrl => throw _privateConstructorUsedError;
-  String? get albumName => throw _privateConstructorUsedError;
+  String get authorAvatarUrl;
+  String? get albumName;
   @override
   @JsonKey(ignore: true)
   $SingleCopyWith<Single> get copyWith => throw _privateConstructorUsedError;
@@ -596,37 +641,30 @@ class _$Album implements Album {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Album &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.description, description) ||
-                const DeepCollectionEquality()
-                    .equals(other.description, description)) &&
-            (identical(other.artUrl, artUrl) ||
-                const DeepCollectionEquality().equals(other.artUrl, artUrl)) &&
-            (identical(other.authorId, authorId) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorId, authorId)) &&
-            (identical(other.authorName, authorName) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorName, authorName)) &&
-            (identical(other.authorAvatarUrl, authorAvatarUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorAvatarUrl, authorAvatarUrl)));
+        (other.runtimeType == runtimeType &&
+            other is Album &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality()
+                .equals(other.description, description) &&
+            const DeepCollectionEquality().equals(other.artUrl, artUrl) &&
+            const DeepCollectionEquality().equals(other.authorId, authorId) &&
+            const DeepCollectionEquality()
+                .equals(other.authorName, authorName) &&
+            const DeepCollectionEquality()
+                .equals(other.authorAvatarUrl, authorAvatarUrl));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(description) ^
-      const DeepCollectionEquality().hash(artUrl) ^
-      const DeepCollectionEquality().hash(authorId) ^
-      const DeepCollectionEquality().hash(authorName) ^
-      const DeepCollectionEquality().hash(authorAvatarUrl);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(description),
+      const DeepCollectionEquality().hash(artUrl),
+      const DeepCollectionEquality().hash(authorId),
+      const DeepCollectionEquality().hash(authorName),
+      const DeepCollectionEquality().hash(authorAvatarUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -659,6 +697,29 @@ class _$Album implements Album {
         album,
   }) {
     return album(
+        id, name, description, artUrl, authorId, authorName, authorAvatarUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            String id,
+            String name,
+            String description,
+            Duration duration,
+            String mediaUrl,
+            String artUrl,
+            String authorId,
+            String authorName,
+            String authorAvatarUrl,
+            String? albumName)?
+        single,
+    TResult Function(String id, String name, String description, String artUrl,
+            String authorId, String authorName, String authorAvatarUrl)?
+        album,
+  }) {
+    return album?.call(
         id, name, description, artUrl, authorId, authorName, authorAvatarUrl);
   }
 
@@ -700,6 +761,15 @@ class _$Album implements Album {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Single value)? single,
+    TResult Function(Album value)? album,
+  }) {
+    return album?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Single value)? single,
     TResult Function(Album value)? album,
@@ -723,19 +793,19 @@ abstract class Album implements Audio {
       required String authorAvatarUrl}) = _$Album;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get artUrl => throw _privateConstructorUsedError;
+  String get artUrl;
   @override
-  String get authorId => throw _privateConstructorUsedError;
+  String get authorId;
   @override
-  String get authorName => throw _privateConstructorUsedError;
+  String get authorName;
   @override
-  String get authorAvatarUrl => throw _privateConstructorUsedError;
+  String get authorAvatarUrl;
   @override
   @JsonKey(ignore: true)
   $AlbumCopyWith<Album> get copyWith => throw _privateConstructorUsedError;

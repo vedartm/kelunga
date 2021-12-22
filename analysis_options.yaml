@@ -1,4 +1,4 @@
-include: package:effective_dart/analysis_options.yaml
+include: package:flutter_lints/flutter.yaml
 
 analyzer:
   enable-experiment:
@@ -11,7 +11,6 @@ analyzer:
     - lib/**/*.freezed.dart
 
   errors:
-    missing_return: error
     prefer_const_constructors: warning
     public_member_api_docs: ignore
     lines_longer_than_80_chars: ignore

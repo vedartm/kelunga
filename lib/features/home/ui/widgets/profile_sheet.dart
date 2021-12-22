@@ -43,7 +43,7 @@ class ProfileSheet extends StatelessWidget {
               onPressed: () async {
                 await context.read<AuthCubit>().signOut();
                 Navigator.of(context).pop();
-                AutoRouter.of(context).replace(LoginRoute());
+                AutoRouter.of(context).replace(const LoginRoute());
               },
               icon: const Icon(Icons.logout),
               label: const Text('SIGN OUT'),

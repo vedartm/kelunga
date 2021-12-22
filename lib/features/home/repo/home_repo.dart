@@ -28,12 +28,12 @@ class HomeRepo implements IHomeRepo {
       final querySnapshot = await _firestore.collection('audios').get();
 
       final models =
-          querySnapshot.docs.map((e) => Audio.fromAudiosCollection(e)).toList();
+          querySnapshot.docs.map(Audio.fromAudiosCollection).toList();
 
       return Right(models);
     } catch (e) {
       _logger.e(e);
-      return Left(const Failure.server());
+      return const Left(Failure.server());
     }
   }
 
@@ -42,13 +42,12 @@ class HomeRepo implements IHomeRepo {
     try {
       final querySnapshot = await _firestore.collection('banners').get();
 
-      final models =
-          querySnapshot.docs.map((e) => Banner.fromFirestore(e)).toList();
+      final models = querySnapshot.docs.map(Banner.fromFirestore).toList();
 
       return Right(models);
     } catch (e) {
       _logger.e(e);
-      return Left(const Failure.server());
+      return const Left(Failure.server());
     }
   }
 
@@ -68,7 +67,7 @@ class HomeRepo implements IHomeRepo {
       return Right(models);
     } catch (e) {
       _logger.e(e);
-      return Left(const Failure.server());
+      return const Left(Failure.server());
     }
   }
 }

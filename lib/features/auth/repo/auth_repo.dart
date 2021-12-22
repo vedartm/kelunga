@@ -35,13 +35,13 @@ class AuthRepo implements IAuthRepo {
     try {
       final user = _firebaseAuth.currentUser;
       if (user == null) {
-        return Left(const Failure.unauthenticated());
+        return const Left(Failure.unauthenticated());
       }
       // final model = await _gqlDataSource.getUser(user.uid);
       final model = m.User.fromFirebase(user);
       return Right(model);
     } catch (e) {
-      return Left(const Failure.server());
+      return const Left(Failure.server());
     }
   }
 
@@ -53,7 +53,7 @@ class AuthRepo implements IAuthRepo {
       _logger.d(googleUser?.email);
 
       if (googleUser == null) {
-        return Left(Failure.cancelledByUser());
+        return const Left(Failure.cancelledByUser());
       }
 
       final googleAuthentication = await googleUser.authentication;
@@ -68,7 +68,7 @@ class AuthRepo implements IAuthRepo {
       return Right(user);
     } catch (e) {
       _logger.e(e);
-      return Left(const Failure.server());
+      return const Left(Failure.server());
     }
   }
 
@@ -76,9 +76,9 @@ class AuthRepo implements IAuthRepo {
   Future<Either<Failure, Unit>> signOut() async {
     try {
       await _firebaseAuth.signOut();
-      return Right(unit);
+      return const Right(unit);
     } on Exception {
-      return Left(const Failure.server());
+      return const Left(Failure.server());
     }
   }
 

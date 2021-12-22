@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failures.dart';
 
@@ -47,6 +48,14 @@ mixin _$Failure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cache,
+    TResult Function()? server,
+    TResult Function()? unauthenticated,
+    TResult Function()? cancelledByUser,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cache,
     TResult Function()? server,
@@ -61,6 +70,14 @@ mixin _$Failure {
     required TResult Function(ServerFailure value) server,
     required TResult Function(Unauthenticated value) unauthenticated,
     required TResult Function(CancelledByUser value) cancelledByUser,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(ServerFailure value)? server,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(CancelledByUser value)? cancelledByUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,7 +136,8 @@ class _$CacheFailure implements CacheFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CacheFailure);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CacheFailure);
   }
 
   @override
@@ -134,6 +152,17 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function() cancelledByUser,
   }) {
     return cache();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cache,
+    TResult Function()? server,
+    TResult Function()? unauthenticated,
+    TResult Function()? cancelledByUser,
+  }) {
+    return cache?.call();
   }
 
   @override
@@ -160,6 +189,17 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function(CancelledByUser value) cancelledByUser,
   }) {
     return cache(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(ServerFailure value)? server,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(CancelledByUser value)? cancelledByUser,
+  }) {
+    return cache?.call(this);
   }
 
   @override
@@ -212,7 +252,8 @@ class _$ServerFailure implements ServerFailure {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerFailure);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerFailure);
   }
 
   @override
@@ -227,6 +268,17 @@ class _$ServerFailure implements ServerFailure {
     required TResult Function() cancelledByUser,
   }) {
     return server();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cache,
+    TResult Function()? server,
+    TResult Function()? unauthenticated,
+    TResult Function()? cancelledByUser,
+  }) {
+    return server?.call();
   }
 
   @override
@@ -253,6 +305,17 @@ class _$ServerFailure implements ServerFailure {
     required TResult Function(CancelledByUser value) cancelledByUser,
   }) {
     return server(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(ServerFailure value)? server,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(CancelledByUser value)? cancelledByUser,
+  }) {
+    return server?.call(this);
   }
 
   @override
@@ -305,7 +368,8 @@ class _$Unauthenticated implements Unauthenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unauthenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unauthenticated);
   }
 
   @override
@@ -320,6 +384,17 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function() cancelledByUser,
   }) {
     return unauthenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cache,
+    TResult Function()? server,
+    TResult Function()? unauthenticated,
+    TResult Function()? cancelledByUser,
+  }) {
+    return unauthenticated?.call();
   }
 
   @override
@@ -346,6 +421,17 @@ class _$Unauthenticated implements Unauthenticated {
     required TResult Function(CancelledByUser value) cancelledByUser,
   }) {
     return unauthenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(ServerFailure value)? server,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(CancelledByUser value)? cancelledByUser,
+  }) {
+    return unauthenticated?.call(this);
   }
 
   @override
@@ -398,7 +484,8 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CancelledByUser);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CancelledByUser);
   }
 
   @override
@@ -413,6 +500,17 @@ class _$CancelledByUser implements CancelledByUser {
     required TResult Function() cancelledByUser,
   }) {
     return cancelledByUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cache,
+    TResult Function()? server,
+    TResult Function()? unauthenticated,
+    TResult Function()? cancelledByUser,
+  }) {
+    return cancelledByUser?.call();
   }
 
   @override
@@ -439,6 +537,17 @@ class _$CancelledByUser implements CancelledByUser {
     required TResult Function(CancelledByUser value) cancelledByUser,
   }) {
     return cancelledByUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(ServerFailure value)? server,
+    TResult Function(Unauthenticated value)? unauthenticated,
+    TResult Function(CancelledByUser value)? cancelledByUser,
+  }) {
+    return cancelledByUser?.call(this);
   }
 
   @override

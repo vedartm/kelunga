@@ -29,7 +29,7 @@ class AlbumPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: KDimens.padding),
               alignment: Alignment.topLeft,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(KDimens.borderRadius),
                   bottomRight: Radius.circular(KDimens.borderRadius),
                 ),

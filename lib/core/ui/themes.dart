@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
 
 import 'colors.dart';
 import 'dimens.dart';
@@ -12,52 +10,52 @@ class KThemes {
     fontFamily: 'Inter',
     brightness: Brightness.light,
     primaryColor: Colors.white,
-    accentColor: KColors.primary,
-    iconTheme: IconThemeData(
+    // accentColor: KColors.primary,
+    iconTheme: const IconThemeData(
       color: KColors.textPrimary,
     ),
     // scaffoldBackgroundColor: KColors.scaffoldBackground,
     scaffoldBackgroundColor: Colors.white,
-    textTheme: TextTheme(
-      caption: const TextStyle(
+    textTheme: const TextTheme(
+      caption: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w500,
         letterSpacing: 0.4,
         color: Colors.white,
       ),
-      subtitle2: const TextStyle(
+      subtitle2: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: 16,
         letterSpacing: 0.1,
       ),
-      subtitle1: const TextStyle(
+      subtitle1: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 18,
         letterSpacing: 0.15,
       ),
-      headline5: const TextStyle(
+      headline5: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 28,
       ),
-      headline6: const TextStyle(
+      headline6: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: 24,
         letterSpacing: 0.15,
       ),
-      bodyText1: const TextStyle(
+      bodyText1: TextStyle(
         fontSize: 16,
         letterSpacing: 0.8,
         fontWeight: FontWeight.w300,
         color: KColors.textSecondary,
       ),
-      bodyText2: const TextStyle(
+      bodyText2: TextStyle(
         fontSize: 12,
         letterSpacing: 0.8,
         fontWeight: FontWeight.w300,
         color: KColors.textSecondary,
       ),
     ),
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       color: Colors.white,
       elevation: 2,
     ),
@@ -66,7 +64,7 @@ class KThemes {
         borderRadius: BorderRadius.circular(KDimens.borderRadius),
       ),
     ),
-    dividerTheme: DividerThemeData(
+    dividerTheme: const DividerThemeData(
       space: 0,
       color: Color(0xFFADB8D9),
     ),
@@ -98,13 +96,13 @@ class KThemes {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
           letterSpacing: 1.4,
         ),
         elevation: 0,
-        minimumSize: Size(64, 64),
+        minimumSize: const Size(64, 64),
         primary: KColors.primary,
         onPrimary: Colors.white,
         onSurface: KColors.disabled,
@@ -116,12 +114,12 @@ class KThemes {
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        textStyle: TextStyle(
+        textStyle: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
           letterSpacing: 1.4,
         ),
-        minimumSize: Size(64, 64),
+        minimumSize: const Size(64, 64),
         primary: KColors.primary,
         onSurface: KColors.disabled,
         shape: RoundedRectangleBorder(
@@ -132,13 +130,13 @@ class KThemes {
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 24),
-        side: BorderSide(color: KColors.primary),
-        textStyle: TextStyle(
+        side: const BorderSide(color: KColors.primary),
+        textStyle: const TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
           letterSpacing: 1.4,
         ),
-        minimumSize: Size(64, 64),
+        minimumSize: const Size(64, 64),
         primary: KColors.primary,
         onSurface: KColors.disabled,
         shape: RoundedRectangleBorder(
@@ -148,17 +146,17 @@ class KThemes {
     ),
     inputDecorationTheme: InputDecorationTheme(
       // fillColor: KColors.secondary.withAlpha(20),
-      labelStyle: TextStyle(color: KColors.textSecondary),
+      labelStyle: const TextStyle(color: KColors.textSecondary),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(KDimens.borderRadius),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(KDimens.borderRadius),
-        borderSide: BorderSide(color: KColors.primary, width: 1.0),
+        borderSide: const BorderSide(color: KColors.primary, width: 1.0),
       ),
       alignLabelWithHint: true,
     ),
-    bottomAppBarTheme: BottomAppBarTheme(
+    bottomAppBarTheme: const BottomAppBarTheme(
       color: Colors.white,
     ),
     chipTheme: ChipThemeData(
@@ -172,13 +170,13 @@ class KThemes {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(KDimens.borderRadius),
       ),
-      labelStyle: TextStyle(
+      labelStyle: const TextStyle(
         fontSize: 12,
         letterSpacing: 0.4,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
-      secondaryLabelStyle: TextStyle(
+      secondaryLabelStyle: const TextStyle(
         fontSize: 12,
         letterSpacing: 0.4,
         fontWeight: FontWeight.bold,

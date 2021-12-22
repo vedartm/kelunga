@@ -1,10 +1,10 @@
-import 'package:audio_service/audio_service.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:just_audio_background/just_audio_background.dart';
 
-import '../../../../core/util/player_task.dart';
 import '../../../home/models/audio.dart';
 
 part 'player_cubit.freezed.dart';
@@ -14,91 +14,74 @@ part 'player_state.dart';
 class PlayerCubit extends Cubit<PlayerState> {
   PlayerCubit() : super(PlayerState.initial());
 
+  AudioPlayer player = AudioPlayer();
+
   Future<void> initializePlayer() async {
-    print('AudioService connected: ${AudioService.connected}');
-    print('AudioService Running: ${AudioService.running}');
-    if (!AudioService.connected) await AudioService.connect();
-    await AudioService.start(backgroundTaskEntrypoint: entrypoint);
-
-    AudioService.runningStream.listen((event) {
-      if (!event) emit(PlayerState.initial());
+    player.positionStream.listen((event) {
+      emit(state.copyWith(position: optionOf(event)));
     });
-
-    AudioService.playbackStateStream.listen((pState) {
-      emit(state.copyWith(
-        isPlaying: pState.playing,
-        position: optionOf(pState.position),
-        bufferedPosition: optionOf(pState.bufferedPosition),
-      ));
-      switch (pState.processingState) {
-        case AudioProcessingState.none:
+    player.bufferedPositionStream.listen((event) {
+      emit(state.copyWith(bufferedPosition: optionOf(event)));
+    });
+    player.processingStateStream.listen((event) {
+      switch (event) {
+        case ProcessingState.idle:
+          emit(PlayerState.initial());
           break;
-        case AudioProcessingState.connecting:
+        case ProcessingState.loading:
           emit(state.copyWith(isLoading: true));
           break;
-        case AudioProcessingState.ready:
-          emit(state.copyWith(
-            isLoading: false,
-            isBuffering: false,
-          ));
+        case ProcessingState.ready:
+          emit(state.copyWith(isLoading: false));
           break;
-        case AudioProcessingState.buffering:
+        case ProcessingState.buffering:
           emit(state.copyWith(isBuffering: true));
           break;
-        case AudioProcessingState.fastForwarding:
-          break;
-        case AudioProcessingState.rewinding:
-          break;
-        case AudioProcessingState.skippingToPrevious:
-          break;
-        case AudioProcessingState.skippingToNext:
-          break;
-        case AudioProcessingState.skippingToQueueItem:
-          break;
-        case AudioProcessingState.completed:
-          break;
-        case AudioProcessingState.stopped:
-          break;
-        case AudioProcessingState.error:
+        case ProcessingState.completed:
+          emit(PlayerState.initial());
           break;
       }
+    });
+    player.playingStream.listen((event) {
+      emit(state.copyWith(isPlaying: event));
     });
   }
 
   void playAudio(Single single) async {
-    if (!AudioService.running) {
-      await initializePlayer();
-    }
     emit(state.copyWith(
       isLoading: true,
       currentAudio: optionOf(single),
     ));
     try {
-      await AudioService.playMediaItem(MediaItem(
-        id: single.mediaUrl,
-        album: single.albumName ?? single.authorName,
-        displayDescription: single.description,
-        artist: single.authorName,
-        artUri: Uri.parse(single.artUrl),
-        title: single.name,
+      player.setAudioSource(AudioSource.uri(
+        Uri.parse(single.mediaUrl),
+        tag: MediaItem(
+          id: single.id,
+          duration: single.duration,
+          album: single.albumName,
+          artist: single.authorName,
+          title: single.name,
+          artUri: Uri.parse(single.artUrl),
+        ),
       ));
+      await player.play();
     } catch (e) {
-      print("Error loading audio: $e");
+      // print("Error loading audio: $e");
     }
     emit(state.copyWith(isLoading: false));
   }
 
   void changePlayingState() {
-    if (state.isPlaying) {
-      AudioService.pause();
+    if (player.playing) {
+      player.pause();
     } else {
-      AudioService.play();
+      player.play();
     }
   }
 
   @override
   Future<void> close() async {
-    await AudioService.stop();
+    await player.stop();
     return super.close();
   }
 }

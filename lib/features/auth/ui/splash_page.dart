@@ -19,8 +19,10 @@ class _SplashPageState extends State<SplashPage> {
       listener: (context, state) {
         state.map(
           authenticating: (s) => null,
-          authenticated: (s) => AutoRouter.of(context).replace(HomeRoute()),
-          unauthenticated: (s) => AutoRouter.of(context).replace(LoginRoute()),
+          authenticated: (s) =>
+              AutoRouter.of(context).replace(const HomeRoute()),
+          unauthenticated: (s) =>
+              AutoRouter.of(context).replace(const LoginRoute()),
         );
       },
       child: const Scaffold(

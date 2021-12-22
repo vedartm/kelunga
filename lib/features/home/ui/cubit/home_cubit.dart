@@ -18,8 +18,8 @@ class HomeCubit extends Cubit<HomeState> {
   void fetchAudios() async {
     final result = await _repo.getAudios();
     emit(result.fold(
-      (l) => HomeState.failed(l),
-      (r) => HomeState.success(r),
+      HomeState.failed,
+      HomeState.success,
     ));
   }
 }

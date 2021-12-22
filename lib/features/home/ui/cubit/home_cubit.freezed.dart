@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'home_cubit.dart';
 
@@ -46,6 +47,13 @@ mixin _$HomeState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Failure failure)? failed,
+    TResult Function()? loading,
+    TResult Function(List<Audio> audios)? success,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Failure failure)? failed,
     TResult Function()? loading,
@@ -58,6 +66,13 @@ mixin _$HomeState {
     required TResult Function(_Failed value) failed,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -139,14 +154,14 @@ class _$_Failed implements _Failed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Failed &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _Failed &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -161,6 +176,16 @@ class _$_Failed implements _Failed {
     required TResult Function(List<Audio> audios) success,
   }) {
     return failed(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Failure failure)? failed,
+    TResult Function()? loading,
+    TResult Function(List<Audio> audios)? success,
+  }) {
+    return failed?.call(failure);
   }
 
   @override
@@ -189,6 +214,16 @@ class _$_Failed implements _Failed {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+  }) {
+    return failed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Failed value)? failed,
     TResult Function(_Loading value)? loading,
@@ -205,7 +240,7 @@ class _$_Failed implements _Failed {
 abstract class _Failed implements HomeState {
   const factory _Failed(Failure failure) = _$_Failed;
 
-  Failure get failure => throw _privateConstructorUsedError;
+  Failure get failure;
   @JsonKey(ignore: true)
   _$FailedCopyWith<_Failed> get copyWith => throw _privateConstructorUsedError;
 }
@@ -238,7 +273,8 @@ class _$_Loading implements _Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Loading);
   }
 
   @override
@@ -252,6 +288,16 @@ class _$_Loading implements _Loading {
     required TResult Function(List<Audio> audios) success,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Failure failure)? failed,
+    TResult Function()? loading,
+    TResult Function(List<Audio> audios)? success,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -276,6 +322,16 @@ class _$_Loading implements _Loading {
     required TResult Function(_Success value) success,
   }) {
     return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+  }) {
+    return loading?.call(this);
   }
 
   @override
@@ -342,14 +398,14 @@ class _$_Success implements _Success {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Success &&
-            (identical(other.audios, audios) ||
-                const DeepCollectionEquality().equals(other.audios, audios)));
+        (other.runtimeType == runtimeType &&
+            other is _Success &&
+            const DeepCollectionEquality().equals(other.audios, audios));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(audios);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(audios));
 
   @JsonKey(ignore: true)
   @override
@@ -364,6 +420,16 @@ class _$_Success implements _Success {
     required TResult Function(List<Audio> audios) success,
   }) {
     return success(audios);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Failure failure)? failed,
+    TResult Function()? loading,
+    TResult Function(List<Audio> audios)? success,
+  }) {
+    return success?.call(audios);
   }
 
   @override
@@ -392,6 +458,16 @@ class _$_Success implements _Success {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Failed value)? failed,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Failed value)? failed,
     TResult Function(_Loading value)? loading,
@@ -408,7 +484,7 @@ class _$_Success implements _Success {
 abstract class _Success implements HomeState {
   const factory _Success(List<Audio> audios) = _$_Success;
 
-  List<Audio> get audios => throw _privateConstructorUsedError;
+  List<Audio> get audios;
   @JsonKey(ignore: true)
   _$SuccessCopyWith<_Success> get copyWith =>
       throw _privateConstructorUsedError;

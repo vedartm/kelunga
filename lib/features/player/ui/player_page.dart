@@ -31,7 +31,7 @@ class _PlayerPageState extends State<PlayerPage>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
   }
 
@@ -97,8 +97,8 @@ class _PlayerPageState extends State<PlayerPage>
                 color: Colors.white,
                 progress: _controller,
               ),
-              padding: EdgeInsets.all(32.0),
-              shape: CircleBorder(
+              padding: const EdgeInsets.all(32.0),
+              shape: const CircleBorder(
                 side: BorderSide(
                   color: Color(0xFFBABCC6),
                   width: 12,

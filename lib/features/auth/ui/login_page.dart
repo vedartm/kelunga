@@ -56,10 +56,10 @@ class LoginPage extends StatelessWidget {
                     await context.read<AuthCubit>().signInWithGoogle();
                 Navigator.of(context).pop();
                 if (result) {
-                  AutoRouter.of(context).replace(HomeRoute());
+                  AutoRouter.of(context).replace(const HomeRoute());
                 }
               },
-              child: Text('CONTINUE WITH GOOGLE'),
+              child: const Text('CONTINUE WITH GOOGLE'),
             ),
           ),
           // KSpacers.height16,

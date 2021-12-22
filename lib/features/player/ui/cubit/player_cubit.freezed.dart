@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'player_cubit.dart';
 
@@ -207,36 +208,28 @@ class _$_PlayerState implements _PlayerState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PlayerState &&
-            (identical(other.currentAudio, currentAudio) ||
-                const DeepCollectionEquality()
-                    .equals(other.currentAudio, currentAudio)) &&
-            (identical(other.isPlaying, isPlaying) ||
-                const DeepCollectionEquality()
-                    .equals(other.isPlaying, isPlaying)) &&
-            (identical(other.isLoading, isLoading) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoading, isLoading)) &&
-            (identical(other.isBuffering, isBuffering) ||
-                const DeepCollectionEquality()
-                    .equals(other.isBuffering, isBuffering)) &&
-            (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)) &&
-            (identical(other.bufferedPosition, bufferedPosition) ||
-                const DeepCollectionEquality()
-                    .equals(other.bufferedPosition, bufferedPosition)));
+        (other.runtimeType == runtimeType &&
+            other is _PlayerState &&
+            const DeepCollectionEquality()
+                .equals(other.currentAudio, currentAudio) &&
+            const DeepCollectionEquality().equals(other.isPlaying, isPlaying) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.isBuffering, isBuffering) &&
+            const DeepCollectionEquality().equals(other.position, position) &&
+            const DeepCollectionEquality()
+                .equals(other.bufferedPosition, bufferedPosition));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(currentAudio) ^
-      const DeepCollectionEquality().hash(isPlaying) ^
-      const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(isBuffering) ^
-      const DeepCollectionEquality().hash(position) ^
-      const DeepCollectionEquality().hash(bufferedPosition);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(currentAudio),
+      const DeepCollectionEquality().hash(isPlaying),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isBuffering),
+      const DeepCollectionEquality().hash(position),
+      const DeepCollectionEquality().hash(bufferedPosition));
 
   @JsonKey(ignore: true)
   @override
@@ -254,17 +247,17 @@ abstract class _PlayerState implements PlayerState {
       required Option<Duration> bufferedPosition}) = _$_PlayerState;
 
   @override
-  Option<Single> get currentAudio => throw _privateConstructorUsedError;
+  Option<Single> get currentAudio;
   @override
-  bool get isPlaying => throw _privateConstructorUsedError;
+  bool get isPlaying;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  bool get isBuffering => throw _privateConstructorUsedError;
+  bool get isBuffering;
   @override
-  Option<Duration> get position => throw _privateConstructorUsedError;
+  Option<Duration> get position;
   @override
-  Option<Duration> get bufferedPosition => throw _privateConstructorUsedError;
+  Option<Duration> get bufferedPosition;
   @override
   @JsonKey(ignore: true)
   _$PlayerStateCopyWith<_PlayerState> get copyWith =>

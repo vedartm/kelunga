@@ -31,7 +31,7 @@ class _PlayerWidgetState extends State<PlayerWidget>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
     );
   }
 
@@ -99,8 +99,8 @@ class _PlayerWidgetState extends State<PlayerWidget>
               ),
               KSpacers.width20,
               state.isLoading
-                  ? Padding(
-                      padding: const EdgeInsets.all(KDimens.padding),
+                  ? const Padding(
+                      padding: EdgeInsets.all(KDimens.padding),
                       child: KLoader(),
                     )
                   : IconButton(

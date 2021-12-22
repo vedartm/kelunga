@@ -1,4 +1,3 @@
-import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -32,66 +31,64 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return AudioServiceWidget(
-      child: WillPopScope(
-        onWillPop: () async {
-          if (_controller.isPanelOpen) {
-            _controller.close();
-            return false;
-          }
-          return true;
-        },
-        child: Scaffold(
-          body: BlocListener<PlayerCubit, PlayerState>(
-            listener: (context, state) {
-              state.currentAudio.fold(
-                _controller.hide,
-                (a) {
-                  if (!_controller.isPanelShown) _controller.show();
-                },
-              );
-            },
-            child: SlidingUpPanel(
-              color: KColors.secondary,
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(2, -6),
-                  blurRadius: 16,
-                  color: Color(0xFF54575C).withOpacity(0.2),
-                ),
-              ],
-              maxHeight: MediaQuery.of(context).size.height -
-                  MediaQuery.of(context).padding.top,
-              controller: _controller,
-              panel: PlayerPage(controller: _controller),
-              collapsed: InkWell(
-                onTap: _controller.open,
-                child: const PlayerWidget(),
+    return WillPopScope(
+      onWillPop: () async {
+        if (_controller.isPanelOpen) {
+          _controller.close();
+          return false;
+        }
+        return true;
+      },
+      child: Scaffold(
+        body: BlocListener<PlayerCubit, PlayerState>(
+          listener: (context, state) {
+            state.currentAudio.fold(
+              _controller.hide,
+              (a) {
+                if (!_controller.isPanelShown) _controller.show();
+              },
+            );
+          },
+          child: SlidingUpPanel(
+            color: KColors.secondary,
+            boxShadow: [
+              BoxShadow(
+                offset: const Offset(2, -6),
+                blurRadius: 16,
+                color: const Color(0xFF54575C).withOpacity(0.2),
               ),
-              borderRadius: BorderRadius.circular(KDimens.borderRadius),
-              body: SafeArea(
-                child: BlocBuilder<HomeCubit, HomeState>(
-                  bloc: getIt()..fetchAudios(),
-                  builder: (context, state) => state.map(
-                    failed: (s) => const KError(),
-                    loading: (s) => const KLoader(),
-                    success: (s) => CustomScrollView(
-                      slivers: [
-                        SliverToBoxAdapter(child: const HomeHeader()),
-                        SliverPadding(
-                          padding: const EdgeInsets.all(KDimens.padding),
-                          sliver: SliverGrid.count(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: KDimens.padding,
-                            crossAxisSpacing: KDimens.padding,
-                            children: List.generate(
-                              s.audios.length,
-                              (index) => AudioItem(audio: s.audios[index]),
-                            ),
+            ],
+            maxHeight: MediaQuery.of(context).size.height -
+                MediaQuery.of(context).padding.top,
+            controller: _controller,
+            panel: PlayerPage(controller: _controller),
+            collapsed: InkWell(
+              onTap: _controller.open,
+              child: const PlayerWidget(),
+            ),
+            borderRadius: BorderRadius.circular(KDimens.borderRadius),
+            body: SafeArea(
+              child: BlocBuilder<HomeCubit, HomeState>(
+                bloc: getIt()..fetchAudios(),
+                builder: (context, state) => state.map(
+                  failed: (s) => const KError(),
+                  loading: (s) => const KLoader(),
+                  success: (s) => CustomScrollView(
+                    slivers: [
+                      const SliverToBoxAdapter(child: HomeHeader()),
+                      SliverPadding(
+                        padding: const EdgeInsets.all(KDimens.padding),
+                        sliver: SliverGrid.count(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: KDimens.padding,
+                          crossAxisSpacing: KDimens.padding,
+                          children: List.generate(
+                            s.audios.length,
+                            (index) => AudioItem(audio: s.audios[index]),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),

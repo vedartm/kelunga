@@ -18,7 +18,7 @@ class AuthCubit extends Cubit<AuthState> {
     final failureOrSuccess = await _repo.getLoggedInUser();
     emit(failureOrSuccess.fold(
       (l) => const AuthState.unauthenticated(),
-      (r) => AuthState.authenticated(r),
+      AuthState.authenticated,
     ));
   }
 
@@ -27,7 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
     final user = await _repo.signInWithGoogle();
     emit(user.fold(
       (l) => const AuthState.unauthenticated(),
-      (r) => AuthState.authenticated(r),
+      AuthState.authenticated,
     ));
     return user.fold((l) => false, (r) => true);
   }

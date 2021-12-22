@@ -56,8 +56,8 @@ class HomeHeader extends StatelessWidget {
               KSpacers.width16,
               state.maybeMap(
                 orElse: () => InkWell(
-                  onTap: () => AutoRouter.of(context).push(LoginRoute()),
-                  child: CircleAvatar(radius: 22),
+                  onTap: () => AutoRouter.of(context).push(const LoginRoute()),
+                  child: const CircleAvatar(radius: 22),
                 ),
                 authenticated: (s) => InkWell(
                   onTap: () => showModalBottomSheet(
@@ -83,10 +83,10 @@ class HomeHeader extends StatelessWidget {
               aspectRatio: 2,
               autoPlay: true,
               viewportFraction: 1,
-              autoPlayInterval: Duration(seconds: 3),
+              autoPlayInterval: const Duration(seconds: 3),
             );
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return KLoader();
+              return const KLoader();
             }
             return snapshot.data?.fold(
                   (l) => const SizedBox(),

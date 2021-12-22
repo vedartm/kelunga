@@ -22,9 +22,9 @@ class SingleItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: KDimens.padding),
-          child: const Divider(),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: KDimens.padding),
+          child: Divider(),
         ),
         ListTile(
           contentPadding: const EdgeInsets.symmetric(
@@ -35,7 +35,7 @@ class SingleItem extends StatelessWidget {
             context.read<PlayerCubit>().playAudio(single);
             AutoRouter.of(context).pop();
           },
-          leading: Icon(
+          leading: const Icon(
             Icons.play_circle_fill_rounded,
             color: KColors.textSecondary,
             size: 48,
